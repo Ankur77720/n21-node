@@ -26,4 +26,7 @@ router.get(
         res.send("profile")
     })
 
+/* /users/feed [get] {protected} */
+router.get('/feed', userMiddleware.authUser, userController.feedViewController)
+
 module.exports = router

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        .posts {
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
+
+        .post {
+            width: 13em;
+            height: 20em;
+        }
+
+        .post img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <main>
+
+        <section>
+            <div class="posts">
+                <% posts.forEach(post=>{ %>
+
+                <div class="post">
+                    <img
+                        src="<%= post.media %>"
+                        alt=""
+                    >
+                </div>
+
+                <% }) %>
+
+
+
+
+
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

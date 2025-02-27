@@ -6,14 +6,18 @@ module.exports.createPostView = (req, res) => {
 
 module.exports.createPostController = async (req, res) => {
 
+    console.log(req.user.id)
+
     const { media, caption } = req.body
 
     const post = await postModel.create({
         media,
-        caption
+        caption,
+        author: req.user.id
     })
 
     res.status(201).json({
-        post
+        post,
+        message: "Post created successfully"
     })
 }
