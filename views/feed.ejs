@@ -21,6 +21,10 @@
             width: 100%;
         }
 
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
         main {
             padding: 1rem;
         }
@@ -34,6 +38,19 @@
         .post {
             width: 13em;
             height: 20em;
+        }
+
+        .post .top {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+        }
+
+        .post .top img {
+            height: 2.5em;
+            width: 2.5em;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .post img {
@@ -54,19 +71,22 @@
                 <% posts.forEach(post=>{ %>
 
                 <div class="post">
+                    <div class="top">
+                        <img
+                            src="<%= post.author.profileImage %>"
+                            alt=""
+                        >
+                        <h1><%= post.author.username %></h1>
+                    </div>
+
                     <img
                         src="<%= post.media %>"
                         alt=""
                     >
+                    <p><%= post.caption %></p>
                 </div>
 
                 <% }) %>
-
-
-
-
-
-
             </div>
         </section>
 

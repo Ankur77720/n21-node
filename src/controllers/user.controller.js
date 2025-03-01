@@ -82,7 +82,7 @@ module.exports.loginUserController = async (req, res) => {
 
 module.exports.feedViewController = async (req, res) => {
 
-    const posts = await postModel.find()
+    const posts = await postModel.find().populate('author')
 
     console.log(posts)
 
