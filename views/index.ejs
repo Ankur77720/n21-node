@@ -16,7 +16,14 @@
         const socket = io()
 
         document.querySelector("button").addEventListener('click', () => {
-            socket.emit('some-event')
+            socket.emit("some-event", {
+                batch: 'N21',
+                message: "Hello server"
+            })
+        })
+
+        socket.on('client-event', msg => {
+            console.log(msg)
         })
 
     </script>
